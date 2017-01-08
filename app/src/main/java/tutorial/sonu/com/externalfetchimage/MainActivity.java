@@ -2,6 +2,7 @@ package tutorial.sonu.com.externalfetchimage;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -36,6 +38,8 @@ public class MainActivity extends Activity {
         GridView sdcardimage = (GridView) findViewById(R.id.gridview);
         ImageAdapter adapter=new ImageAdapter(this);
         sdcardimage.setAdapter(adapter);
+
+
     }
 
 
@@ -70,7 +74,7 @@ public class MainActivity extends Activity {
 
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder holder = new ViewHolder();
-
+            ImageView imageView;
 
             if (convertView == null) {
                 holder.picturesView = new ImageView(context);
